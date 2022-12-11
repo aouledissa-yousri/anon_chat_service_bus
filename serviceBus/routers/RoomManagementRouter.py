@@ -12,6 +12,12 @@ class RoomManagementRouter:
         return JsonResponse(restClientAdapter.getRooms(request.headers["Token"]), safe=False)
     
 
+    @api_view(["GET"])
+    @staticmethod
+    def getSubscribedRooms(request):
+        return JsonResponse(restClientAdapter.getSubscribedRooms(request.headers["Token"]), safe=False)
+    
+
     @api_view(["POST"])
     @staticmethod
     def createPrivateRoom(request):
@@ -49,8 +55,6 @@ class RoomManagementRouter:
     def leavePublicRoom(request, roomId):
         return JsonResponse(restClientAdapter.leavePublicRoom(request.headers["Token"], roomId,))
     
-
-
 
     @api_view(["POST"])
     @staticmethod

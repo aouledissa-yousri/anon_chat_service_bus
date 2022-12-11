@@ -9,6 +9,10 @@ class RestClientAdapter:
 
     def getRooms(self, token):
         return requests.get(self.uri+"/room", headers={"token": token}).json()
+    
+
+    def getSubscribedRooms(self, token):
+        return requests.get(self.uri+"/user/rooms", headers={"token": token}).json()
 
 
     

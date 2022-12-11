@@ -10,6 +10,7 @@ urlpatterns = [
 
     #general room paths
     path("room/", RoomManagementRouter.getRooms),
+    path("user/rooms/", RoomManagementRouter.getSubscribedRooms),
     path("room/<roomId>/message/", RoomManagementRouter.sendMessage),
     path("room/<roomId>/message", RoomManagementRouter.getMessages),
 
